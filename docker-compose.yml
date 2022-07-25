@@ -11,11 +11,6 @@ services:
       - POSTGRES_USER=intranet
       - POSTGRES_PASSWORD=intranet
       - POSTGRES_DB=delivery_app_db
-    healthcheck:
-      test: psql -U intranet -d delivery_app_db -c "SELECT 1;"
-      interval: 15s
-      timeout: 10s
-      retries: 5
   web:
     build: .
     ports:
@@ -23,8 +18,7 @@ services:
     env_file:
       - .env
     depends_on:
-      db:
-        condition: service_healthy
+      - db
 
 volumes:
   postgres_data:
