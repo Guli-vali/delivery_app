@@ -1,0 +1,11 @@
+alembic==1.7.5
+asyncpg==0.25.0
+fastapi==0.70.1
+psycopg2==2.9.3
+SQLAlchemy==1.4.29
+uvicorn==0.16.0
+pydantic[dotenv]
+greenlet==1.1.2
+geoalchemy2==0.12.1
+flake8==4.0.1
+pylint==2.14.5

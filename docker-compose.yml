@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: pg-Dockerfile
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=intranet
+      - POSTGRES_PASSWORD=intranet
+      - POSTGRES_DB=delivery_app_db
+    healthcheck:
+      test: psql -U intranet -d delivery_app_db -c "SELECT 1;"
+      interval: 15s
+      timeout: 10s
+      retries: 5
+  web:
+    build: .
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
