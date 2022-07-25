@@ -76,9 +76,9 @@ curl --location --request POST 'http://localhost:8000/api/delivery/' \
 
 Flake8 usage, run in a console:
 ```
->>> docker-compose run web flake8
+>>> docker-compose run web flake8 -v
 ```
-No exceptions for flake8 -v
+No exceptions for flake8
 
 ![alt text](https://i.imgur.com/OP4Nhpj.png)
 
