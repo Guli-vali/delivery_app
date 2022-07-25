@@ -19,10 +19,12 @@
 Create `.env` based on `.env.example`
 
 ```
+cp .env.example .env
+```
+
 Install using `docker-compose`...
-
-    docker-compose up
-
+```
+docker-compose up
 ```
 
 # Documentation(OpenAPI/Swagger)
@@ -72,10 +74,18 @@ curl --location --request POST 'http://localhost:8000/api/delivery/' \
 ```
 # Linters
 
+Flake8 usage, run in a console:
+```
+>>> flake8
+```
 No exceptions for flake8
 
 ![alt text](https://i.imgur.com/umcIv6c.png)
 
+Pylint usage, run in a console:
+```
+>>> pylint app
+```
 9.38 out of 10 for pylint
 
 ![alt text](https://i.imgur.com/QsB4SEy.png)
