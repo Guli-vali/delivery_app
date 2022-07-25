@@ -34,7 +34,7 @@ def courier_selection(couriers):
 @router.post(
     "",
     name="delivery:create",
-    status_code=status.HTTP_201_CREATED
+    status_code=status.HTTP_200_OK
 )
 async def delivery_event(
     delivery_point: GeoPoint,
