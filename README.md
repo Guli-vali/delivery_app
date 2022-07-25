@@ -76,17 +76,17 @@ curl --location --request POST 'http://localhost:8000/api/delivery/' \
 
 Flake8 usage, run in a console:
 ```
->>> flake8
+>>> docker-compose run web flake8
 ```
-No exceptions for flake8
+No exceptions for flake8 -v
 
-![alt text](https://i.imgur.com/umcIv6c.png)
+![alt text](https://i.imgur.com/OP4Nhpj.png)
 
 Pylint usage, run in a console:
 ```
->>> pylint app
+>>> docker-compose run web pylint app
 ```
 9.38 out of 10 for pylint
 
-![alt text](https://i.imgur.com/QsB4SEy.png)
+![alt text](https://i.imgur.com/MQytquL.png)
 
