@@ -20,6 +20,9 @@ def courier_selection(couriers):
     Helper for make decision which courier suitable for delivery,
     now implemented as random picking.
     """
+    if not couriers:
+        return []
+
     result = []
     courier_pointer = randint(0, len(couriers)-1)
     courier = couriers[courier_pointer]
